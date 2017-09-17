@@ -9,11 +9,14 @@ import keras
 # TODO: fill out the function below that transforms the input series 
 # and window-size into a set of input/output pairs for use with our RNN model
 def window_transform_series(series, window_size):
-    # containers for input/output pairs
-    X = []
-    y = []
+	# The highest index should be 6 indices before the last one
+    max_idx = len(series) - window_size
 
-    # reshape each 
+    # containers for input/output pairs
+    X = [series[idx:idx + window_size] for idx in range(max_idx)]
+    y = series[window_size:]
+
+    # reshape each
     X = np.asarray(X)
     X.shape = (np.shape(X)[0:2])
     y = np.asarray(y)
