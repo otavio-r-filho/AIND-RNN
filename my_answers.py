@@ -74,6 +74,14 @@ def window_transform_text(text, window_size, step_size):
 # TODO build the required RNN model: 
 # a single LSTM hidden layer with softmax activation, categorical_crossentropy loss 
 def build_part2_RNN(window_size, num_chars):
+    '''
+    In the project requirements it was stated that 
+    layer 3 should be a softmax activation function.
+    So I'd like to knwo the difference between the 
+    asked one and the following
+
+    model.add(Dense(num_chars, activation='softmax'))
+    '''
     # Instatiating the model
     model = Sequential()
 
